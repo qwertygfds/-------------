@@ -1,0 +1,141 @@
+.input {
+  border: 1px solid var(--navigationPanel);
+  border-radius: 5px;
+  padding: 5px 10px;
+  min-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.input::placeholder {
+  font-size: 18px;
+}
+
+.option {
+  background-color: var(--white);
+}
+
+.bigTable {
+  display: grid;
+  grid-template-columns: 45% 5% 45%;
+  column-gap: 25px;
+  justify-content: stretch;
+}
+
+.bigTableSelect {
+  display: none;
+}
+
+.ul {
+  background-color: var(--white);
+  padding: 0px !important;
+  border-radius: 3px !important;
+  display: grid;
+  grid-template-rows: 80px auto;
+  min-width: 400px;
+  box-sizing: border-box;
+}
+
+.topDiv {
+  padding: 5px;
+  background-color: var(--contextmenu);
+  border-bottom: 1px var(--orange) solid;
+}
+
+.topText {
+  display: flex;
+  justify-content: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px var(--blue) solid;
+}
+
+.topTextinput {
+  box-sizing: border-box;
+  min-width: 100% !important;
+}
+
+.ulData {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 20px;
+  overflow-y: auto;
+  min-height: 150px;
+  max-height: 300px;
+  border: 0px !important;
+}
+
+.ulData li {
+  display: block;
+  border-bottom: 1px var(--gray) solid;
+  margin-bottom: 5px;
+  word-break: break-all;
+}
+.selectData option:hover:checked:after,
+.inputSelected:hover,
+.ulData li:hover {
+  background-color: var(--gray);
+  transition: 0.3s;
+}
+
+.selected {
+  background-color: var(--lightblue);
+}
+.preSelected {
+  background-color: var(--contextmenu);
+}
+.arrowsDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.arrowButton {
+  margin: 5px;
+}
+
+.arrowButton:hover {
+  transition: 0.3s;
+  background-color: var(--gray);
+}
+
+.inputSelected {
+  border: 0px;
+  width: 100%;
+  color: var(--black);
+}
+
+.selectData {
+  border: none;
+  position: relative;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 20px;
+  overflow-y: auto;
+  min-height: 150px;
+  max-height: 300px;
+}
+
+.selectData option {
+  display: block;
+  border-bottom: 1px var(--gray) solid;
+  margin-bottom: 5px;
+  word-break: break-all;
+}
+
+.selectData option:after,
+.selectData option:checked:after {
+  content: attr(title);
+  border-bottom: 1px var(--gray) solid;
+  background: var(--white);
+  color: var(--black);
+  position: absolute;
+  width: 100%;
+  left: 5;
+}

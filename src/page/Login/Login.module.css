@@ -1,0 +1,53 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--white);
+  padding: 20px;
+  border: 0;
+  border-radius: 10px;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.login h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.login button {
+  margin: 10px auto;
+}
+
+.login .required::after {
+  content: "*";
+  color: red;
+}
+
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBlock label {
+  margin: 10px 0;
+}
+
+.errorInput p {
+  margin-top: 2px;
+}
+
+.errorInput p,
+.errorInput label {
+  color: red;
+}
+
+.errorInput input {
+  border: 1px solid red;
+}

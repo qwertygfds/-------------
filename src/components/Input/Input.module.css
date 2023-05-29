@@ -1,0 +1,10 @@
+.input {
+  border: 1px solid var(--navigationPanel);
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: var(--white);
+}
+
+.input::placeholder {
+  font-size: 18px;
+}

@@ -1,0 +1,46 @@
+.customContextMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 999999;
+  background: var(--contextmenu);
+  box-shadow: 0 4px 8px var(--boxshadow);
+}
+.customContextMenu.hide {
+  visibility: collapse;
+}
+
+.optionDiv {
+  height: 40px;
+  border-bottom: 1px var(--gray) solid;
+  display: grid;
+  grid-template-columns: 50px 1px auto;
+  column-gap: 5px;
+}
+.icon {
+  align-self: center;
+  justify-self: center;
+}
+.border {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  min-height: 70% !important;
+  border-left: 2px var(--orange) solid;
+}
+
+.option {
+  color: var(--black);
+  display: flex;
+  align-self: center;
+  justify-self: left;
+  width: max-content;
+  margin-right: 15px;
+  padding: 5px;
+}
+
+.optionDiv:hover {
+  cursor: pointer;
+  background-color: var(--boxshadow);
+  transition: 0.2s;
+}

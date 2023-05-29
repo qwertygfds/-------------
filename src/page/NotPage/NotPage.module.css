@@ -1,0 +1,19 @@
+.container {
+	height: 100%;
+	min-width: 100vw;
+	margin-left: -10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: var(--white);
+}
+
+.container p {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.container button {
+	margin-top: 10px;
+}

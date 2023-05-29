@@ -1,0 +1,55 @@
+.expanderStyle {
+	border-radius: 10px;
+}
+
+.headerStyle {
+	text-align: center;
+	font-size: medium;
+	height: 100%;
+	display: flex;
+	cursor: pointer;
+	color: var(--black);
+	align-items: center;
+}
+
+.headerStyle:hover {
+	background-color: var(--lightblue);
+	transition: 0.3s;
+}
+.titleStyle {
+	padding: 3px;
+	flex: none;
+	font-size: 17px;
+	text-align: center;
+}
+
+.spacerStyle {
+	flex: 1;
+}
+
+.iconStyle {
+	padding: 3px;
+	flex: none;
+}
+
+.contentStyle {
+	overflow: hidden;
+	transition: all 0.3s;
+}
+
+.contentExpandedStyle {
+	overflow: hidden;
+	transition: all 0.3s;
+	padding: 4px 0;
+	height: auto;
+	filter: opacity(1);
+}
+
+.contentCollapsedStyle {
+	overflow: hidden;
+	transition: all 0.3s;
+	padding: 0 0;
+	border: 1px solid transparent;
+	height: 0;
+	filter: opacity(0);
+}

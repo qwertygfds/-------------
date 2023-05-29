@@ -1,0 +1,86 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 60px;
+  transition: 350ms;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: var(--navigationPanel);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.sidebar.active {
+  width: 250px;
+  transition: 350ms;
+}
+
+.scroll {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll::-webkit-scrollbar {
+  overflow-y: scroll;
+  display: none; /* Safari and Chrome */
+}
+.link {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  list-style: none;
+  min-height: 50px !important;
+  width: 100%;
+  background: none;
+}
+.link.arrow {
+  background-color: var(--bluearrow);
+}
+.link a {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  width: 100%;
+  min-height: 50px !important;
+  padding-left: 17.5px;
+}
+.exit {
+  margin-bottom: 5px;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: min-content max-content;
+  align-items: center;
+  width: 100%;
+  min-height: 50px !important;
+  padding-left: 17.5px;
+}
+.exit:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 0.5s;
+}
+
+.link:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 0.5s;
+}
+
+.selected {
+  background-color: var(--orange);
+}
+
+.text {
+  font-size: 18px;
+  margin-left: 10px;
+  color: white;
+  text-align: center;
+}
+
+.textCollapse {
+  display: none;
+}
