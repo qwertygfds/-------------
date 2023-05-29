@@ -6,7 +6,6 @@ import { NotPage } from "./page/NotPage/NotPage";
 import { useDispatch } from "react-redux";
 import { userSlice } from "./store/reducers/UserSlice";
 import { RequireAuth } from "./settings/RoutePrivate.Auth";
-import { RegistrationPage } from "./page/Registration/RegistrationPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,16 +16,15 @@ function App() {
 
   return (
     <Routes>
-      {/* <Route
+      <Route
         path="/directories"
         element={
           <RequireAuth>
-            <DirectoryPage />
+            <NotPage />
           </RequireAuth>
         }
-      /> */}
+      />
       <Route path="*" element={<NotPage />} />
-      <Route path="/registration" element={<RegistrationPage />} />
     </Routes>
   );
 }

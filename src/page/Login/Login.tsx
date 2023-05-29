@@ -8,8 +8,8 @@ import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
 
 export interface DataLogin {
-  userName: string;
-  password: string;
+  idInstance: string;
+  apiTokenInstance: string;
 }
 
 export const Login = () => {
@@ -24,6 +24,10 @@ export const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm({
+    defaultValues: {
+      idInstance: "",
+      apiTokenInstance: "",
+    },
     mode: "all",
   });
 
@@ -34,49 +38,42 @@ export const Login = () => {
         <h1>Вход</h1>
         <div
           className={cn(styles.inputBlock, {
-            [styles.errorInput]: errors.userName,
+            [styles.errorInput]: errors.idInstance,
           })}
         >
-          <label className={cn("required")} htmlFor="userName">
-            Логин
-          </label>
+          <label htmlFor="idInstance">IdInstance</label>
           <Input
             type="text"
             id="userName"
-            {...register("username", {
+            {...register("idInstance", {
               required: true,
             })}
-            placeholder="Логин"
+            placeholder="idInstance"
           />
-          {errors?.userName && <p>{errors.userName.message?.toString()}</p>}
-          {errors?.userName && errors.userName.message === "" && <p>Необходимо заполнить поле</p>}
+          {errors?.idInstance && <p>{errors.idInstance.message?.toString()}</p>}
+          {errors?.idInstance && errors.idInstance.message === "" && <p>Необходимо заполнить поле</p>}
         </div>
         <div
           className={cn(styles.inputBlock, {
-            [styles.errorInput]: errors.password,
+            [styles.errorInput]: errors.apiTokenInstance,
           })}
         >
-          <label htmlFor="password" className={cn("required")}>
-            Пароль
+          <label htmlFor="apiTokenInstance" className={cn("required")}>
+            ApiTokenInstance
           </label>
           <Input
-            type="password"
-            id="password"
-            {...register("password", {
+            id="apiTokenInstance"
+            {...register("apiTokenInstance", {
               required: true,
             })}
-            placeholder="Пароль"
+            placeholder="apiTokenInstance"
           />
-          {errors?.password && <p>{errors.password.message?.toString()}</p>}
-          {errors?.password && errors.password.message === "" && <p>Необходимо заполнить поле</p>}
+          {errors?.apiTokenInstance && <p>{errors.apiTokenInstance.message?.toString()}</p>}
+          {errors?.apiTokenInstance && errors.apiTokenInstance.message === "" && <p>Необходимо заполнить поле</p>}
         </div>
         <Button appearance="green" type="submit">
           Войти
         </Button>
-        <div className={styles.flex}>
-          <Link to={"/registration"}>Зарегистрироваться</Link>
-          <Link to={"/newlogin"}>Не могу зайти в аккаунт</Link>
-        </div>
       </form>
     </>
   );
