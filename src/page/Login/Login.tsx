@@ -4,8 +4,6 @@ import { useAppDispatch } from "../../store/hooks/redux";
 import { fetchUser } from "../../store/reducers/ActionCreator";
 import { useForm } from "react-hook-form";
 import styles from "./Login.module.css";
-import { ToastContainer } from "react-toastify";
-import { Link } from "react-router-dom";
 
 export interface DataLogin {
   idInstance: string;
@@ -32,49 +30,46 @@ export const Login = () => {
   });
 
   return (
-    <>
-      <ToastContainer position="bottom-right" hideProgressBar={true} theme={"dark"} autoClose={3000} />
-      <form onSubmit={handleSubmit(authFun)} className={styles.login}>
-        <h1>Вход</h1>
-        <div
-          className={cn(styles.inputBlock, {
-            [styles.errorInput]: errors.idInstance,
+    <form onSubmit={handleSubmit(authFun)} className={styles.login}>
+      <h1>Вход</h1>
+      <div
+        className={cn(styles.inputBlock, {
+          [styles.errorInput]: errors.idInstance,
+        })}
+      >
+        <label htmlFor="idInstance">IdInstance</label>
+        <Input
+          type="text"
+          id="userName"
+          {...register("idInstance", {
+            required: true,
           })}
-        >
-          <label htmlFor="idInstance">IdInstance</label>
-          <Input
-            type="text"
-            id="userName"
-            {...register("idInstance", {
-              required: true,
-            })}
-            placeholder="idInstance"
-          />
-          {errors?.idInstance && <p>{errors.idInstance.message?.toString()}</p>}
-          {errors?.idInstance && errors.idInstance.message === "" && <p>Необходимо заполнить поле</p>}
-        </div>
-        <div
-          className={cn(styles.inputBlock, {
-            [styles.errorInput]: errors.apiTokenInstance,
+          placeholder="idInstance"
+        />
+        {errors?.idInstance && <p>{errors.idInstance.message?.toString()}</p>}
+        {errors?.idInstance && errors.idInstance.message === "" && <p>Необходимо заполнить поле</p>}
+      </div>
+      <div
+        className={cn(styles.inputBlock, {
+          [styles.errorInput]: errors.apiTokenInstance,
+        })}
+      >
+        <label htmlFor="apiTokenInstance" className={cn("required")}>
+          ApiTokenInstance
+        </label>
+        <Input
+          id="apiTokenInstance"
+          {...register("apiTokenInstance", {
+            required: true,
           })}
-        >
-          <label htmlFor="apiTokenInstance" className={cn("required")}>
-            ApiTokenInstance
-          </label>
-          <Input
-            id="apiTokenInstance"
-            {...register("apiTokenInstance", {
-              required: true,
-            })}
-            placeholder="apiTokenInstance"
-          />
-          {errors?.apiTokenInstance && <p>{errors.apiTokenInstance.message?.toString()}</p>}
-          {errors?.apiTokenInstance && errors.apiTokenInstance.message === "" && <p>Необходимо заполнить поле</p>}
-        </div>
-        <Button appearance="green" type="submit">
-          Войти
-        </Button>
-      </form>
-    </>
+          placeholder="apiTokenInstance"
+        />
+        {errors?.apiTokenInstance && <p>{errors.apiTokenInstance.message?.toString()}</p>}
+        {errors?.apiTokenInstance && errors.apiTokenInstance.message === "" && <p>Необходимо заполнить поле</p>}
+      </div>
+      <Button appearance="green" type="submit">
+        Войти
+      </Button>
+    </form>
   );
 };

@@ -17,7 +17,7 @@ function App() {
   return (
     <Routes>
       <Route
-        path="/directories"
+        path="/"
         element={
           <RequireAuth>
             <NotPage />

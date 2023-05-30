@@ -6,12 +6,12 @@
 }
 
 .green {
-  background: var(--green);
+  background: var(--buttonBackgroundGreen);
   color: white;
 }
 
 .gray {
-  background: var(--buttomBackgroudGreen);
+  background: var(--buttonBackgroundGray);
   color: var(--white);
 }
 

@@ -1,5 +1,5 @@
 .input {
-  border: 1px solid var(--navigationPanel);
+  border: 1px solid var(--inputBorder);
   border-radius: 5px;
   padding: 5px 10px;
   background-color: var(--white);

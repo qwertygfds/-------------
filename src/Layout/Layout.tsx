@@ -1,17 +1,13 @@
 import { LayoutProps } from "./Layout.props";
 import styles from "./Layout.module.css";
 import { FunctionComponent } from "react";
-import { LeftNavigationPanel } from "./LeftNavigationPanel/LeftNavigationPanel";
-import { useAppSelector } from "../store/hooks/redux";
 import { ModalContextProvider } from "../context/Modal.context";
 import { ToastContainer } from "react-toastify";
 import { ContextMenu } from "../components/ContextMenu/ContextMenu";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
-  const { token } = useAppSelector((state) => state.user);
   return (
     <div className={styles.wrapper}>
-      {token && <LeftNavigationPanel />}
       <main className={styles.data}>{children}</main>
     </div>
   );
