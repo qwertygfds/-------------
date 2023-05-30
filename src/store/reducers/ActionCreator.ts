@@ -10,16 +10,18 @@ interface propsData {
 
 export const fetchUser = createAsyncThunk<{}, propsData>("user/fetchLogin", async (formData, thunkAPI) => {
   try {
-    const { status } = await axiosPrivate.get(
-      `waInstance${formData.idInstance}/getSettings/${formData.apiTokenInstance}`
+    const { status, data } = await axiosPrivate.get(
+      `waInstance${formData.idInstance}/getStatusInstance/${formData.apiTokenInstance}`
     );
-    if (status === 200) {
+    debugger;
+    if (status === 200 && data.statusInstance === "online") {
       Cookies.set("idInstance", formData.idInstance);
       Cookies.set("apiTokenInstance", formData.apiTokenInstance);
       return formData;
     }
   } catch (e) {
-    toast.error("Ошибка! Проверьте правильность логина и пароля");
-    return thunkAPI.rejectWithValue({ error: "Ошибка, проверте введенные данные" });
+    console.log(e);
   }
+  toast.error("Ошибка! Проверьте правильность логина и пароля");
+  return thunkAPI.rejectWithValue({ error: "Ошибка, проверте введенные данные" });
 });
