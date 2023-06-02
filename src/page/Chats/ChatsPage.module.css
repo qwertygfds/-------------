@@ -1,0 +1,150 @@
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mainDiv .children {
+  width: 97vw;
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: "contacts chats";
+  background: var(--white);
+}
+
+.mainDiv .children .leftPanel {
+  grid-area: contacts;
+  display: flex;
+  flex-flow: column nowrap;
+  border-right: 1px var(--darkGray) solid;
+}
+
+.mainDiv .children .leftPanel .inner {
+  padding: 10px;
+}
+
+.mainDiv .children .leftPanel .inner .input {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+}
+
+.mainDiv .children .leftPanel .header {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--chatHeaderBackground);
+  padding: 10px;
+}
+
+.messageDivBase {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: stretch;
+}
+
+.contactItem {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  padding: 5px;
+  column-gap: 5px;
+  height: 40px;
+  align-items: center;
+  border-bottom: 1px var(--green) solid;
+  width: 100%;
+}
+
+.contactItem:hover {
+  transition: 0.1s;
+  background-color: rgb(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.contactItem.icon {
+  justify-self: center;
+}
+
+.mainDiv .children .rightPanel {
+  height: 95vh;
+  grid-area: chats;
+  display: grid;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas: "header" "messages" "textLine";
+}
+
+.contactItem.rightHeader {
+  grid-area: header;
+  border-bottom: 0px;
+  background-color: var(--chatHeaderBackground);
+  cursor: default;
+}
+
+.mainDiv .children .rightPanel .messages {
+  grid-area: messages;
+  background-color: var(--messagesBackground);
+  display: flex;
+  overflow-y: auto;
+  flex-flow: column nowrap;
+  row-gap: 10px;
+}
+
+.mainDiv .children .rightPanel .messages .messageDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: var(--justify);
+  padding: 10px;
+}
+
+.mainDiv .children .rightPanel .messages .messageDiv .item {
+  background-color: var(--color);
+  padding: 5px;
+  margin: 0 10px 5px 10px;
+}
+
+.mainDiv .children .rightPanel .inputBox {
+  grid-area: textLine;
+  display: grid;
+  grid-template-columns: 30px auto;
+}
+.mainDiv .children .rightPanel .inputBox .icon {
+  padding: 5px;
+  align-self: center;
+  justify-self: center;
+}
+
+.mainDiv .children .rightPanel .inputBox .inputBoxField {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  min-height: 2rem;
+  resize: none;
+}
+
+.mainDiv .children .rightPanel .inputBox .inputBoxField br,
+.mainDiv .children .rightPanel .inputBox .inputBoxField p,
+.mainDiv .children .rightPanel .inputBox .inputBoxField div {
+  display: none;
+}
+
+&:not(:empty) ~ .mainDiv .children .rightPanel .inputBox .inputBoxPlaceholder {
+  display: none;
+}
+
+.mainDiv .children .rightPanel .inputBox .inputBoxPlaceholder {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.mainDiv .children .rightPanel .inputBox .inputBoxPlaceholder::before {
+  content: attr(data-ph);
+}

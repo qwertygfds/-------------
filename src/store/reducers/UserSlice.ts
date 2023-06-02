@@ -34,7 +34,6 @@ export const userSlice = createSlice({
   },
   extraReducers: {
     [fetchUser.fulfilled.type]: (state, action: PayloadAction<UserState>) => {
-      debugger;
       state.apiTokenInstance = action.payload.apiTokenInstance;
       state.idInstance = action.payload.idInstance;
     },

@@ -1,0 +1,19 @@
+.mainDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDiv .div {
+  display: grid;
+  grid-template-columns: 130px auto;
+  column-gap: 5px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainDiv .button {
+  margin-top: 20px;
+}

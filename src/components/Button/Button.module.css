@@ -16,7 +16,7 @@
 }
 
 .red {
-  background: var(--red);
+  background: var(--buttonBackgroundRed);
   color: var(--black);
 }
 

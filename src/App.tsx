@@ -6,6 +6,7 @@ import { NotPage } from "./page/NotPage/NotPage";
 import { useDispatch } from "react-redux";
 import { userSlice } from "./store/reducers/UserSlice";
 import { RequireAuth } from "./settings/RoutePrivate.Auth";
+import { ChatsPage } from "./page/Chats/ChatsPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function App() {
         path="/"
         element={
           <RequireAuth>
-            <NotPage />
+            <ChatsPage />
           </RequireAuth>
         }
       />

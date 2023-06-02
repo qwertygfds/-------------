@@ -4,15 +4,15 @@
   -webkit-transform: translateZ(0) scale(1, 1);
   transform: scale(1);
   zoom: 1;
-  background: var(--dialogBackground);
-  min-width: 50%;
-  min-height: 50%;
+  background: var(--modalBackground);
   max-width: 90%;
   border: 0;
   border-radius: 10px;
 }
 
 .modal .modal__inner {
+  position: relative;
+  bottom: 0px;
   padding: 20px;
 }
 
@@ -22,7 +22,7 @@
 
 .modal .headerModal {
   padding: 5px;
-  border-bottom: 1px solid var(--orange);
+  border-bottom: 1px solid var(--modalLineHeader);
   display: flex;
   flex-direction: row;
   align-items: center;

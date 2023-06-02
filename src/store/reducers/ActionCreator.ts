@@ -11,10 +11,9 @@ interface propsData {
 export const fetchUser = createAsyncThunk<{}, propsData>("user/fetchLogin", async (formData, thunkAPI) => {
   try {
     const { status, data } = await axiosPrivate.get(
-      `waInstance${formData.idInstance}/getStatusInstance/${formData.apiTokenInstance}`
+      `waInstance${formData.idInstance}/getStateInstance/${formData.apiTokenInstance}`
     );
-    debugger;
-    if (status === 200 && data.statusInstance === "online") {
+    if (status === 200 && data.stateInstance === "authorized") {
       Cookies.set("idInstance", formData.idInstance);
       Cookies.set("apiTokenInstance", formData.apiTokenInstance);
       return formData;

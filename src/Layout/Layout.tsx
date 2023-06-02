@@ -8,7 +8,7 @@ import { ContextMenu } from "../components/ContextMenu/ContextMenu";
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
-      <main className={styles.data}>{children}</main>
+      <main>{children}</main>
     </div>
   );
 };
@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
   return function withLayoutComponent(props: T): JSX.Element {
     return (
-      <ModalContextProvider isOpen={false} body={undefined} header={undefined}>
+      <ModalContextProvider isOpen={false} body={undefined} header={undefined} updatedItem={undefined}>
         <Layout>
           <ContextMenu position={undefined} values={[]} selectedId={undefined} />
           <ToastContainer

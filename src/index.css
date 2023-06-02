@@ -2,12 +2,24 @@ html {
   --background: #eae6df;
   --backgroundDeeper: #d1d7db;
 
-  --inputBorder: gray;
+  --inputBorder: rgb(128, 128, 128);
 
   --buttonBackgroundGreen: #00a884;
   --buttonBackgroundGray: #d1d7db;
+  --buttonBackgroundRed: crimson;
+  --chatHeaderBackground: rgb(220, 220, 220);
 
+  --modalBackground: whitesmoke;
+  --modalLineHeader: #00a884;
+
+  --messagesBackground: #e9edef;
+  --textOutcomingBackgroud: #d9fdd3;
+  --textIncomingBackgroud: #fff;
+
+  --green: rgb(0, 188, 152);
   --white: #fff;
+  --black: black;
+  --darkGray: rgb(108, 108, 108);
 }
 
 .baseDiv {
@@ -67,47 +79,6 @@ input {
 
 iframe {
   pointer-events: none;
-}
-
-.modal {
-  position: fixed;
-  margin: auto;
-  -webkit-transform: translateZ(0) scale(1, 1);
-  transform: scale(1);
-  zoom: 1;
-  background: var(--modal);
-  min-width: 50%;
-  min-height: 50%;
-  max-width: 90%;
-  border: 0;
-  border-radius: 10px;
-}
-
-.modal .modal__inner {
-  padding: 20px;
-}
-
-.modal::backdrop {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.modal .headerModal {
-  padding: 5px;
-  border-bottom: 1px solid var(--orange);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.closeModal {
-  cursor: pointer;
-}
-
-.modal .bodyModal {
-  padding: 5px;
 }
 
 h1 {
